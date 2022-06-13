@@ -42,7 +42,14 @@ export default function searching(idSearch, idSection) {
     } else if (e.key === "Space") {
       searcher.push(" ");
     }
-    searcherToString = searcher.join("");
+
+    if (e.key === "Escape") {
+      searcher = [];
+      searcherToString = "";
+      e.target.value = "";
+    } else {
+      searcherToString = searcher.join("");
+    }
     $element.preventDefault;
     searching(searcherToString, $section);
   });
@@ -104,9 +111,9 @@ export default function searching(idSearch, idSection) {
           children.children[0].children[1].innerHTML = paragraphWhitoutSpan;
           contentParagraph[i] = paragraphWhitoutSpan;
         }
-        children.style.display = "block";
+        children.classList.remove("noEncontrado");
       } else {
-        children.style.display = "none";
+        children.classList.add("noEncontrado");
       }
       i++;
     }
