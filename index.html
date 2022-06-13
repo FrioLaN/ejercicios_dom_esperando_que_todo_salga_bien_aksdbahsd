@@ -31,6 +31,11 @@
           <li><a d-mode href="#seccionOcho">WebCam Tester</a></li>
           <li><a d-mode href="#seccionNueve">Geolocalizacion</a></li>
           <li><a d-mode href="#seccionDies">Filtros de Busqueda</a></li>
+          <li><a d-mode href="#seccionOnce">Sorteo Digital</a></li>
+          <li><a d-mode href="#seccionDoce">Filtros de Busqueda</a></li>
+          <li><a d-mode href="#seccionTrece">Filtros de Busqueda</a></li>
+          <li><a d-mode href="#seccionCatorce">Filtros de Busqueda</a></li>
+          <li><a d-mode href="#seccionQuince">Filtros de Busqueda</a></li>
         </ul>
       </nav>
       <div id="dark-mode--container">
@@ -284,6 +289,34 @@
           </div>
         </article>
       </section>
+    </section>
+    <section d-mode class="secciones once" id="seccionOnce">
+      <h2>Sorteo Digital</h2>
+      <form id="sorteo">
+        <label for="nuevo_participante">Ingresa un nuevo participante</label>
+        <input class="boton shortcuts botonParticipantes" type="text" id="nuevo_participante"
+          placeholder="Ingresa un nombre">
+        <input type="submit" value="Salvar" id="salvaParticipante" class="boton shortcuts botonParticipantesClick">
+        <input type="button" value="Obtener un ganador" id="getWiner" class="boton shortcuts botonParticipantesClick">
+      </form>
+      <div id="contenedor_participantes">
+        <h2>participantes:</h2>
+        <p id="participantes"></p>
+        <h2 id="ganadorTittle"></h2>
+        <p id="ganador"></p>
+      </div>
+    </section>
+    <section d-mode class="secciones doce" id="seccionDoce">
+      <h2>Filtro de busqueda</h2>
+    </section>
+    <section d-mode class="secciones trece" id="seccionTrece">
+      <h2>Filtro de busqueda</h2>
+    </section>
+    <section d-mode class="secciones catorce" id="seccionCatorce">
+      <h2>Filtro de busqueda</h2>
+    </section>
+    <section d-mode class="secciones quince" id="seccionQuince">
+      <h2>Filtro de busqueda</h2>
     </section>
   </main>
   <script src="js/menu_hamburguesa.js" type="text/javascript"></script>

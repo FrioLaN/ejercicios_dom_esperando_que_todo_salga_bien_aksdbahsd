@@ -13,6 +13,7 @@ import { webCam } from "./webcam_media.js";
 import mouseIntoWebCam from "./mouse_over_out_webCam.js";
 import getGeolocation from "./geolocation.js";
 import getSearch from "./search_result.js";
+import sorteo from "./sorteo_automatico.js";
 
 const d = document,
   w = window,
@@ -124,5 +125,13 @@ d.addEventListener("DOMContentLoaded", (e) => {
   });
 
   getSearch("search_text", "cards--containner_main");
+  sorteo(
+    "nuevo_participante",
+    "sorteo",
+    "participantes",
+    "getWiner",
+    "ganador",
+    "ganadorTittle"
+  );
 });
 networkStatus();
