@@ -763,10 +763,12 @@ h1 {
   justify-content: space-evenly;
   margin: 20px 0px;
 }
-
-#cards--containner_main > .cards > .cards--containner {
+#cards--containner_main > .cards {
+  visibility: visible;
   opacity: 1;
-  transition: opacity 200ms;
+  transition: all 200ms ease-in-out;
+}
+#cards--containner_main > .cards > .cards--containner {
   border: 1px solid #f7df1e;
   background-color: #222;
   color: #f7df1e;
@@ -814,4 +816,10 @@ h1 {
 .mark_search {
   background-color: crimson;
   color: beige;
+}
+
+.noEncontrado {
+  visibility: hidden !important;
+  opacity: 0 !important;
+  order: 1;
 }
