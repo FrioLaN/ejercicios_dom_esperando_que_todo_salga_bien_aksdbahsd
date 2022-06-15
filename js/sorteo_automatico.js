@@ -40,7 +40,7 @@ export default function (
             let i = 0,
               aux = 0;
             let winner,
-              num = Math.round(Math.random() * participantes.length - 1);
+              num = Math.floor(Math.random() * participantes.length);
             winner = participantes[num];
             $ganador.textContent = "";
             let espera = setInterval(() => {
