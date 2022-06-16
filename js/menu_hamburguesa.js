@@ -20,7 +20,7 @@ function animationButton() {
     $lineaDosBotonActivador.style.backgroundColor = "#f7df1e";
     $lineaTresBotonActivador.style.backgroundColor = "#f7df1e";
     $menu_desplegable.style.opacity = 1;
-    $menu_desplegable.style.zIndex = 2;
+    $menu_desplegable.style.zIndex = 3;
     $menu_desplegable.style.visibility = "visible";
     $menu_desplegable.classList.replace("#", "primero");
     contador = 1;
@@ -30,7 +30,7 @@ function animationButton() {
     $lineaDosBotonActivador.style.backgroundColor = "#222";
     $lineaTresBotonActivador.style.backgroundColor = "#222";
     $menu_desplegable.style.opacity = 0;
-    $menu_desplegable.style.zIndex = -1;
+    $menu_desplegable.style.zIndex = 3;
     $menu_desplegable.style.visibility = "hidden";
     $menu_desplegable.classList.replace("primero", "ultimo");
     contador = 0;

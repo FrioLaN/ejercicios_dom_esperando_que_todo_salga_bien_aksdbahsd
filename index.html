@@ -32,7 +32,7 @@
           <li><a d-mode href="#seccionNueve">Geolocalizacion</a></li>
           <li><a d-mode href="#seccionDies">Filtros de Busqueda</a></li>
           <li><a d-mode href="#seccionOnce">Sorteo Digital</a></li>
-          <li><a d-mode href="#seccionDoce">Filtros de Busqueda</a></li>
+          <li><a d-mode href="#seccionDoce">Responsive Slider</a></li>
           <li><a d-mode href="#seccionTrece">Filtros de Busqueda</a></li>
           <li><a d-mode href="#seccionCatorce">Filtros de Busqueda</a></li>
           <li><a d-mode href="#seccionQuince">Filtros de Busqueda</a></li>
@@ -307,7 +307,36 @@
       </div>
     </section>
     <section d-mode class="secciones doce" id="seccionDoce">
-      <h2>Filtro de busqueda</h2>
+      <h2>Responsive Slider</h2>
+      <section id="container-slider">
+        <div class="slider--btn -left" id="sliderBtnLeft">
+
+          <ion-icon class="btn --left" name="arrow-back-circle-outline">
+          </ion-icon>
+
+          <p class="inf_btn">Back</p>
+        </div>
+
+        <article class="content-slider first">
+          <img src="https://placeimg.com/200/200/nature" alt="naturaleza">
+        </article>
+        <article class="content-slider off">
+          <p>Estaremos hablando un poco sobre la naturaleza..</p>
+        </article>
+        <article class="content-slider off">
+          <img src="https://placeimg.com/200/200/animals" alt="animals">
+        </article>
+        <article class="content-slider off">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur perferendis natus iusto blanditiis?
+            Dolorum dolor repudiandae quaerat, sapiente illo natus, asperiores in, distinctio numquam itaque iste
+            inventore quia consequuntur eum.</p>
+        </article>
+        <div class="slider--btn -rigth" id="sliderBtnRigth">
+          <ion-icon class="btn --rigth" name="arrow-forward-circle-outline">
+          </ion-icon>
+          <p class="inf_btn">Next</p>
+        </div>
+      </section>
     </section>
     <section d-mode class="secciones trece" id="seccionTrece">
       <h2>Filtro de busqueda</h2>
@@ -319,6 +348,7 @@
       <h2>Filtro de busqueda</h2>
     </section>
   </main>
+  <script src="css/styles.js"></script>
   <script src="js/menu_hamburguesa.js" type="text/javascript"></script>
   <script src="js/reloj_digital.js" type="text/javascript"></script>
   <script src="js/index.js" type="module"></script>

@@ -14,6 +14,7 @@ import mouseIntoWebCam from "./mouse_over_out_webCam.js";
 import getGeolocation from "./geolocation.js";
 import getSearch from "./search_result.js";
 import sorteo from "./sorteo_automatico.js";
+import slider from "./slider.js";
 
 const d = document,
   w = window,
@@ -133,5 +134,6 @@ d.addEventListener("DOMContentLoaded", (e) => {
     "ganador",
     "ganadorTittle"
   );
+  slider(".btn", ".content-slider");
 });
 networkStatus();
