@@ -919,6 +919,7 @@ h1 {
   visibility: hidden;
   z-index: 0;
   top: 15px;
+  transition: all 200ms ease-in-out;
 }
 
 .content-slider img {
@@ -932,6 +933,10 @@ h1 {
   visibility: visible !important;
   z-index: 20 !important;
   font-size: 20px !important;
+}
+
+.--initial-btn {
+  opacity: 0.5;
 }
 
 .--left,

@@ -12,6 +12,8 @@ export default function sliderResp(btns, article) {
     if (item.classList.contains("--rigth")) {
       if (i < $articles.length - 1) {
         i++;
+        console.log($btns);
+        $btns[1].classList.remove("--initial-btn");
         $btns[0].style.opacity = 1;
         $articles[i].classList.add("on");
         $articles[i].classList.remove("off--rigth");
