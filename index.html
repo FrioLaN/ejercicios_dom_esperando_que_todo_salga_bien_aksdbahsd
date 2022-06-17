@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/styles.css" type="text/css">
-  <title>Document</title>
+  <title>DOM</title>
 </head>
 
 <body>
@@ -49,302 +49,335 @@
         <ion-icon name="chevron-up-circle" id="chevron_up_circle"></ion-icon>
       </a>
     </span>
-    <section d-mode class="secciones uno" id="seccionUno">
+    <section id="padre">
+      <article id="hijos">
+        <section d-mode class="secciones uno" id="seccionUno">
 
-      <article id="reloj">
-        <h2>reloj digital y alarma</h2>
+          <article id="reloj">
+            <h2>reloj digital y alarma</h2>
 
-        <div id="reloj_digital">
+            <div id="reloj_digital">
 
-          <p id="dentroDeReloj">00:00:00</p>
+              <p id="dentroDeReloj">00:00:00</p>
 
-          <input type="button" class="boton Reloj" id="Activar" value="Iniciar Reloj (hora actual)"></input>
-          <input type="button" class="boton Reloj" id="Detener" value="Detener Reloj"></input>
+              <input type="button" class="boton Reloj" id="Activar" value="Iniciar Reloj (hora actual)"></input>
+              <input type="button" class="boton Reloj" id="Detener" value="Detener Reloj"></input>
 
-          <div d-mode id="alarma_caja" class="excpt">
+              <div d-mode id="alarma_caja" class="excpt">
 
-            <h3 id="AlarmaDefinida">Alarma para el dia de hoy a las : (no definida)</h3>
-            <input type="time" class="boton Reloj Alarma" id="Alarma" value="00:00">
-            <input type="submit" value="salvar" class="boton Reloj AlarmaGuardar" id="SalvarAlarma">
+                <h3 id="AlarmaDefinida">Alarma para el dia de hoy a las : (no definida)</h3>
+                <input type="time" class="boton Reloj Alarma" id="Alarma" value="00:00">
+                <input type="submit" value="salvar" class="boton Reloj AlarmaGuardar" id="SalvarAlarma">
 
-            <input type="button" class="boton Reloj AlarmaRemover" id="AlarmaRemover"
-              value="Remover Alarma actual"></input>
+                <input type="button" class="boton Reloj AlarmaRemover" id="AlarmaRemover"
+                  value="Remover Alarma actual"></input>
+
+              </div>
+
+
+            </div>
+
+          </article>
+        </section>
+        <section d-mode class="secciones dos" id="seccionDos">
+          <article id="esfera_y_shortcuts">
+
+            <h2>ESFERA TOTALMENTE CONTROLABLE</h2>
+
+            <form id="shortcuts">
+              <div id="subir" class="formulario shortcut">
+                <div class="contenedor__alertas">
+                  <p class="alerta" id="alerta_arriba">solo puedes ingresar una tecla</p>
+                </div>
+                <div class="contenedor_shortcut">
+                  <span id="figureCheckArriba"></span>
+                  <span id="figureCheckArriba"></span>
+                  <label class="w" for="arriba">BOTON "arriba" = w</label>
+                  <input type="text" placeholder="w" name="arriba" class="boton shortcuts" id="shortcut_arriba">
+                </div>
+              </div>
+
+              <div id="bajar" class="formulario shortcut">
+                <div class="contenedor__alertas">
+                  <p class="alerta" id="alerta_abajo">solo puedes ingresar una tecla</p>
+                </div>
+                <div class="contenedor_shortcut">
+                  <span id="figureCheckAbajo"></span>
+                  <span id="figureCheckAbajo"></span>
+                  <label for="abajo">BOTON "abajo" = s</label>
+                  <input type="text" placeholder="s" name="abajo" class="boton shortcuts" id="shortcut_abajo">
+                </div>
+              </div>
+
+              <div id="derecha" class="formulario shortcut">
+                <div class="contenedor__alertas">
+                  <p class="alerta" id="alerta_derecha">solo puedes ingresar una tecla</p>
+                </div>
+                <div class="contenedor_shortcut">
+                  <span id="figureCheckDerecha"></span>
+                  <span id="figureCheckDerecha"></span>
+                  <label for="derecha" value="D">BOTON "derecha" = d</label>
+                  <input type="text" placeholder="d" name="derecha" class="boton shortcuts" id="shortcut_derecha">
+                </div>
+              </div>
+
+              <div id="izquierda" class="formulario shortcut">
+                <div class="contenedor__alertas">
+                  <p class="alerta" id="alerta_izquierda">solo puedes ingresar una tecla</p>
+                </div>
+                <div class="contenedor_shortcut">
+                  <span id="figureCheckIzquierda"></span>
+                  <span id="figureCheckIzquierda"></span>
+                  <label for="izquierda">BOTON "izquierda" = a</label>
+                  <input type="text" placeholder="a" name="izquierda" class="boton shortcuts" id="shortcut_izquierda">
+                </div>
+              </div>
+              <div class="contenedor__alertas">
+                <p class="alerta" id="alerta_dos_izquierda">estas ingresando una tecla que ya pertenecia a un valor, por
+                  favor cambiala</p>
+              </div>
+              <input type="button" id="salvarCaracteres" class="boton shortcuts _auxiliares" value="salvar"></input>
+              <input id="cancelar" type="reset" value="cancelar" class="boton shortcuts _auxiliares">
+
+            </form>
+
+            <article id="escenario">
+              <p id="instruccionesEsfera">pulsa sobra el rectangulo gris oscuro para comenzar. Para jugar: si presionas
+                una
+                vez a la
+                letra que esta asignada para subir, bajar, ir a la derecha o izquierda, este se movera al lado que este
+                indicado </p>
+              <span id="esfera"></span>
+            </article>
+
+          </article>
+        </section>
+        <section d-mode class="secciones tres" id="seccionTres">
+          <h2>Cuenta a tras desde hoy, hasta navidad</h2>
+          <p id="countdown"></p>
+          <div>
+            <p>Porcentaje de lo que va desde el 1 de enero hasta el 25 de diciembre</p>
+            <div id="progress_bar-container">
+              <div id="progress_bar"></div>
+            </div>
+          </div>
+        </section>
+        <section d-mode class="secciones cuatro" id="seccionCuatro">
+          <h2>Responsive</h2>
+          <div id="youtubeMedia"></div>
+          <div id="gmapMedia"></div>
+        </section>
+        <section d-mode class="secciones cinco" id="seccionCinco">
+          <h2>Responsive Tester</h2>
+          <form class="formfromResponsive" id="formResponsive">
+            <input required type="url" placeholder="Ingresa una URL" class="formfromResponsive--input boton shortcuts"
+              id="inputURL">
+            <input required type="number" placeholder="ancho de la URL"
+              class="formfromResponsive--input boton shortcuts" id="inputWIDTH" value="500">
+            <input required type="number" placeholder="alto de la URL" class="formfromResponsive--input boton shortcuts"
+              id="inputHEIGTH" value="500">
+            <input type="submit" class="formfromResponsive--button boton shortcuts" id="salvarURL" value="agregar">
+            <input type="button" class="formfromResponsive--button boton shortcuts" id="cerrarURL" value="cerrar">
+            <input type="reset" class="formfromResponsive--button boton shortcuts" id="limpiarForm" value="limpiar">
+          </form>
+        </section>
+        <section d-mode class="secciones seis" id="seccionSeis">
+          <h2>user agent</h2>
+          <article id="info-browser">
+            <h3 id="info-browser--user-agent"></h3>
+            <div>
+              <p id="info-browser--navegator"></p>
+              <p id="info-browser--platform"></p>
+            </div>
+          </article>
+        </section>
+        <section d-mode class="secciones siete" id="seccionSiete">
+          <h2>deteccion de conexion!</h2>
+          <p>Se activa una alerta a la hora de perder la conexion y volver a tenerla
+          </p>
+        </section>
+        <section d-mode class="secciones ocho" id="seccionOcho">
+          <h2>WebCam Tester</h2>
+          <p id="infoCam">¿No aparece tu camara?. !clickeame¡</p>
+          <div id="webCam_container">
+            <p id="access-webCam">Tocame para conceder permisos de camara y audio</p>
+            <ion-icon id="camOFF" name="videocam-off-outline"></ion-icon>
+            <video id="webCam_video"></video>
+            <audio id="webCam_audio"></audio>
+            <div id="webCam_Controls">
+              <div class="control --video">
+                <ion-icon name="videocam-off-outline"></ion-icon>
+              </div>
+              <div class="control --audio">
+                <ion-icon name="mic-off-outline"></ion-icon>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section d-mode class="secciones nueve" id="seccionNueve">
+          <h2>Geolocalizacion</h2>
+          <div id="geolocation">
 
           </div>
+          <form id="formGeolocalitation">
+            <input class="boton geo submitGeo" type="submit" value="Enviar localizacion">
+          </form>
+        </section>
+        <section d-mode class="secciones dies" id="seccionDies">
+          <h2>Filtro de busqueda</h2>
+          <form id="formFromSearch">
+            <label for="search_text">
+              Escribe lo que deseas buscar:
+            </label>
+            <input class="boton shortcuts search" placeholder="Escribe aqui." type="text" name="search_text"
+              id="search_text">
+          </form>
+          <section id="cards--containner_main">
+            <article class="cards">
+              <div class="cards--containner">
+                <figure class="card">
+                  <img src="https://placeimg.com/200/200/tech" alt="Tecnologia" class="card--image">
+                  <figcaption>Tecnologia</figcaption>
+                </figure>
+                <p class="cards--info">En este articulo se toma en cuenta la tecnologia y todo lo relacionado a esta.
+                </p>
+              </div>
+            </article>
+            <article class="cards">
+              <div class="cards--containner">
+                <figure class="card">
+                  <img src="https://placeimg.com/200/200/animals" alt="Animales" class="card--image">
+                  <figcaption>Animales</figcaption>
+                </figure>
+                <p class="cards--info">En esta a carta se toma el formato de los animales, en la imagen de arriba solo
+                  habran animales</p>
+              </div>
+            </article>
+            <article class="cards">
+              <div class="cards--containner">
+                <figure class="card">
+                  <img src="https://placeimg.com/200/200/people" alt="Personas" class="card--image">
+                  <figcaption>Personas</figcaption>
+                </figure>
+                <p class="cards--info">Aqui podremos encontrar imagenes unicamente de personas, y similares.</p>
+              </div>
+            </article>
+            <article class="cards">
+              <div class="cards--containner">
+                <figure class="card">
+                  <img src="https://placeimg.com/200/200/nature" alt="Naturaleza" class="card--image">
+                  <figcaption>Naturaleza</figcaption>
+                </figure>
+                <p class="cards--info">¿Que es mejor que pasar todo el rato frente al ordenador?. ¡Exacto!, la
+                  naturaleza
+                  (aunque no todos pensaran lo mismo). En estas imagenes solo veras naturaleza!</p>
+              </div>
+            </article>
+            <article class="cards">
+              <div class="cards--containner">
+                <figure class="card">
+                  <img src="https://placeimg.com/200/200/arch" alt="Arquitectonica" class="card--image">
+                  <figcaption>Arquitectonica</figcaption>
+                </figure>
+                <p class="cards--info">A lo largo de la historia, hemos evolucionado mucho. Una de las cosas que
+                  evoluciono
+                  con nosotros es la arquitectonia!</p>
+              </div>
+            </article>
+            <article class="cards">
+              <div class="cards--containner">
+                <figure class="card">
+                  <img src="https://placeimg.com/200/200/any" alt="lo que sea" class="card--image">
+                  <figcaption>Lo que sea</figcaption>
+                </figure>
+                <p class="cards--info">No hay mucho que explicar, puede haber lo que sea
+                  aqui, lol</p>
+              </div>
+            </article>
+          </section>
+        </section>
+        <section d-mode class="secciones once" id="seccionOnce">
+          <h2>Sorteo Digital</h2>
+          <form id="sorteo">
+            <label for="nuevo_participante">Ingresa un nuevo participante</label>
+            <input class="boton shortcuts botonParticipantes" type="text" id="nuevo_participante"
+              placeholder="Ingresa un nombre">
+            <input type="submit" value="Salvar" id="salvaParticipante" class="boton shortcuts botonParticipantesClick">
+            <input type="button" value="Obtener un ganador" id="getWiner"
+              class="boton shortcuts botonParticipantesClick">
+          </form>
+          <div id="contenedor_participantes">
+            <h2>participantes:</h2>
+            <p id="participantes"></p>
+            <h2 id="ganadorTittle"></h2>
+            <p id="ganador"></p>
+          </div>
+        </section>
+        <section d-mode class="secciones doce" id="seccionDoce">
+          <h2>Responsive Slider</h2>
+          <section id="container-slider">
+            <div class="slider--btn -left " id="sliderBtnLeft">
 
+              <ion-icon class="btn --left --initial-btn" name="arrow-back-circle-outline">
+              </ion-icon>
+              <p class="inf_btn">Previous</p>
+            </div>
 
-        </div>
-
+            <article class="content-slider first">
+              <img src="https://placeimg.com/200/200/nature" alt="naturaleza">
+            </article>
+            <article class="content-slider off">
+              <p>Estaremos hablando un poco sobre la naturaleza..</p>
+            </article>
+            <article class="content-slider off">
+              <img src="https://placeimg.com/200/200/animals" alt="animals">
+            </article>
+            <article class="content-slider off">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur perferendis natus iusto
+                blanditiis?
+                Dolorum dolor repudiandae quaerat, sapiente illo natus, asperiores in, distinctio numquam itaque iste
+                inventore quia consequuntur eum.</p>
+            </article>
+            <div class="slider--btn -rigth" id="sliderBtnRigth">
+              <ion-icon class="btn --rigth" name="arrow-forward-circle-outline">
+              </ion-icon>
+              <p class="inf_btn">Next</p>
+            </div>
+          </section>
+        </section>
+        <section d-mode class="secciones trece" id="seccionTrece">
+          <h2>Filtro de busqueda</h2>
+        </section>
+        <section d-mode class="secciones catorce" id="seccionCatorce">
+          <h2>Filtro de busqueda</h2>
+        </section>
+        <section d-mode class="secciones quince" id="seccionQuince">
+          <h2>Filtro de busqueda</h2>
+        </section>
       </article>
-    </section>
-    <section d-mode class="secciones dos" id="seccionDos">
-      <article id="esfera_y_shortcuts">
 
-        <h2>ESFERA TOTALMENTE CONTROLABLE</h2>
-
-        <form id="shortcuts">
-          <div id="subir" class="formulario shortcut">
-            <div class="contenedor__alertas">
-              <p class="alerta" id="alerta_arriba">solo puedes ingresar una tecla</p>
-            </div>
-            <div class="contenedor_shortcut">
-              <span id="figureCheckArriba"></span>
-              <span id="figureCheckArriba"></span>
-              <label class="w" for="arriba">BOTON "arriba" = w</label>
-              <input type="text" placeholder="w" name="arriba" class="boton shortcuts" id="shortcut_arriba">
-            </div>
-          </div>
-
-          <div id="bajar" class="formulario shortcut">
-            <div class="contenedor__alertas">
-              <p class="alerta" id="alerta_abajo">solo puedes ingresar una tecla</p>
-            </div>
-            <div class="contenedor_shortcut">
-              <span id="figureCheckAbajo"></span>
-              <span id="figureCheckAbajo"></span>
-              <label for="abajo">BOTON "abajo" = s</label>
-              <input type="text" placeholder="s" name="abajo" class="boton shortcuts" id="shortcut_abajo">
-            </div>
-          </div>
-
-          <div id="derecha" class="formulario shortcut">
-            <div class="contenedor__alertas">
-              <p class="alerta" id="alerta_derecha">solo puedes ingresar una tecla</p>
-            </div>
-            <div class="contenedor_shortcut">
-              <span id="figureCheckDerecha"></span>
-              <span id="figureCheckDerecha"></span>
-              <label for="derecha" value="D">BOTON "derecha" = d</label>
-              <input type="text" placeholder="d" name="derecha" class="boton shortcuts" id="shortcut_derecha">
-            </div>
-          </div>
-
-          <div id="izquierda" class="formulario shortcut">
-            <div class="contenedor__alertas">
-              <p class="alerta" id="alerta_izquierda">solo puedes ingresar una tecla</p>
-            </div>
-            <div class="contenedor_shortcut">
-              <span id="figureCheckIzquierda"></span>
-              <span id="figureCheckIzquierda"></span>
-              <label for="izquierda">BOTON "izquierda" = a</label>
-              <input type="text" placeholder="a" name="izquierda" class="boton shortcuts" id="shortcut_izquierda">
-            </div>
-          </div>
-          <div class="contenedor__alertas">
-            <p class="alerta" id="alerta_dos_izquierda">estas ingresando una tecla que ya pertenecia a un valor, por
-              favor cambiala</p>
-          </div>
-          <input type="button" id="salvarCaracteres" class="boton shortcuts _auxiliares" value="salvar"></input>
-          <input id="cancelar" type="reset" value="cancelar" class="boton shortcuts _auxiliares">
-
-        </form>
-
-        <article id="escenario">
-          <p id="instruccionesEsfera">pulsa sobra el rectangulo gris oscuro para comenzar. Para jugar: si presionas una
-            vez a la
-            letra que esta asignada para subir, bajar, ir a la derecha o izquierda, este se movera al lado que este
-            indicado </p>
-          <span id="esfera"></span>
-        </article>
-
-      </article>
-    </section>
-    <section d-mode class="secciones tres" id="seccionTres">
-      <h2>Cuenta a tras desde hoy, hasta navidad</h2>
-      <p id="countdown"></p>
-      <div>
-        <p>Porcentaje de lo que va desde el 1 de enero hasta el 25 de diciembre</p>
-        <div id="progress_bar-container">
-          <div id="progress_bar"></div>
-        </div>
-      </div>
-    </section>
-    <section d-mode class="secciones cuatro" id="seccionCuatro">
-      <h2>Responsive</h2>
-      <div id="youtubeMedia"></div>
-      <div id="gmapMedia"></div>
-    </section>
-    <section d-mode class="secciones cinco" id="seccionCinco">
-      <h2>Responsive Tester</h2>
-      <form class="formfromResponsive" id="formResponsive">
-        <input required type="url" placeholder="Ingresa una URL" class="formfromResponsive--input boton shortcuts"
-          id="inputURL">
-        <input required type="number" placeholder="ancho de la URL" class="formfromResponsive--input boton shortcuts"
-          id="inputWIDTH" value="500">
-        <input required type="number" placeholder="alto de la URL" class="formfromResponsive--input boton shortcuts"
-          id="inputHEIGTH" value="500">
-        <input type="submit" class="formfromResponsive--button boton shortcuts" id="salvarURL" value="agregar">
-        <input type="button" class="formfromResponsive--button boton shortcuts" id="cerrarURL" value="cerrar">
-        <input type="reset" class="formfromResponsive--button boton shortcuts" id="limpiarForm" value="limpiar">
-      </form>
-    </section>
-    <section d-mode class="secciones seis" id="seccionSeis">
-      <h2>user agent</h2>
-      <article id="info-browser">
-        <h3 id="info-browser--user-agent"></h3>
+      <aside id="rigth-bar">
         <div>
-          <p id="info-browser--navegator"></p>
-          <p id="info-browser--platform"></p>
+          <ul>
+            <li><a href="#seccionUno" id="uno">reloj digital y alarma</a></li>
+            <li><a href="#seccionDos" id="dos">ESFERA TOTALMENTE CONTROLABLE</a></li>
+            <li><a href="#seccionTres" id="tres">Cuenta a tras desde hoy, hasta navidad
+              </a></li>
+            <li><a href="#seccionCuatro" id="cuatro">Responsive</a></li>
+            <li><a href="#seccionCinco" id="cinco">Responsive Tester</a></li>
+            <li><a href="#seccionSeis" id="seis">user agent</a></li>
+            <li><a href="#seccionSiete" id="siete">deteccion de conexion</a></li>
+            <li><a href="#seccionOcho" id="ocho">WebCam Tester</a></li>
+            <li><a href="#seccionNueve" id="nueve">Geolocalizacion</a></li>
+            <li><a href="#seccionDies" id="dies">Filtros de Busqueda</a></li>
+            <li><a href="#seccionOnce" id="once">Sorteo Digital</a></li>
+            <li><a href="#seccionDoce" id="doce">Responsive Slider</a></li>
+            <li><a href="#seccionTrece" id="trece">Filtros de Busqueda</a></li>
+            <li><a href="#seccionCatorce" id="catorce">Filtros de Busqueda</a></li>
+            <li><a href="#seccionQuince" id="quince">Filtros de Busqueda</a></li>
+          </ul>
         </div>
-      </article>
-    </section>
-    <section d-mode class="secciones siete" id="seccionSiete">
-      <h2>deteccion de conexion!</h2>
-      <p>Se activa una alerta a la hora de perder la conexion y volver a tenerla
-      </p>
-    </section>
-    <section d-mode class="secciones ocho" id="seccionOcho">
-      <h2>WebCam Tester</h2>
-      <p id="infoCam">¿No aparece tu camara?. !clickeame¡</p>
-      <div id="webCam_container">
-        <p id="access-webCam">Tocame para conceder permisos de camara y audio</p>
-        <ion-icon id="camOFF" name="videocam-off-outline"></ion-icon>
-        <video id="webCam_video"></video>
-        <audio id="webCam_audio"></audio>
-        <div id="webCam_Controls">
-          <div class="control --video">
-            <ion-icon name="videocam-off-outline"></ion-icon>
-          </div>
-          <div class="control --audio">
-            <ion-icon name="mic-off-outline"></ion-icon>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section d-mode class="secciones nueve" id="seccionNueve">
-      <h2>Geolocalizacion</h2>
-      <div id="geolocation">
-
-      </div>
-      <form id="formGeolocalitation">
-        <input class="boton geo submitGeo" type="submit" value="Enviar localizacion">
-      </form>
-    </section>
-    <section d-mode class="secciones dies" id="seccionDies">
-      <h2>Filtro de busqueda</h2>
-      <form id="formFromSearch">
-        <label for="search_text">
-          Escribe lo que deseas buscar:
-        </label>
-        <input class="boton shortcuts search" placeholder="Escribe aqui." type="text" name="search_text"
-          id="search_text">
-      </form>
-      <section id="cards--containner_main">
-        <article class="cards">
-          <div class="cards--containner">
-            <figure class="card">
-              <img src="https://placeimg.com/200/200/tech" alt="Tecnologia" class="card--image">
-              <figcaption>Tecnologia</figcaption>
-            </figure>
-            <p class="cards--info">En este articulo se toma en cuenta la tecnologia y todo lo relacionado a esta.</p>
-          </div>
-        </article>
-        <article class="cards">
-          <div class="cards--containner">
-            <figure class="card">
-              <img src="https://placeimg.com/200/200/animals" alt="Animales" class="card--image">
-              <figcaption>Animales</figcaption>
-            </figure>
-            <p class="cards--info">En esta a carta se toma el formato de los animales, en la imagen de arriba solo
-              habran animales</p>
-          </div>
-        </article>
-        <article class="cards">
-          <div class="cards--containner">
-            <figure class="card">
-              <img src="https://placeimg.com/200/200/people" alt="Personas" class="card--image">
-              <figcaption>Personas</figcaption>
-            </figure>
-            <p class="cards--info">Aqui podremos encontrar imagenes unicamente de personas, y similares.</p>
-          </div>
-        </article>
-        <article class="cards">
-          <div class="cards--containner">
-            <figure class="card">
-              <img src="https://placeimg.com/200/200/nature" alt="Naturaleza" class="card--image">
-              <figcaption>Naturaleza</figcaption>
-            </figure>
-            <p class="cards--info">¿Que es mejor que pasar todo el rato frente al ordenador?. ¡Exacto!, la naturaleza
-              (aunque no todos pensaran lo mismo). En estas imagenes solo veras naturaleza!</p>
-          </div>
-        </article>
-        <article class="cards">
-          <div class="cards--containner">
-            <figure class="card">
-              <img src="https://placeimg.com/200/200/arch" alt="Arquitectonica" class="card--image">
-              <figcaption>Arquitectonica</figcaption>
-            </figure>
-            <p class="cards--info">A lo largo de la historia, hemos evolucionado mucho. Una de las cosas que evoluciono
-              con nosotros es la arquitectonia!</p>
-          </div>
-        </article>
-        <article class="cards">
-          <div class="cards--containner">
-            <figure class="card">
-              <img src="https://placeimg.com/200/200/any" alt="lo que sea" class="card--image">
-              <figcaption>Lo que sea</figcaption>
-            </figure>
-            <p class="cards--info">No hay mucho que explicar, puede haber lo que sea
-              aqui, lol</p>
-          </div>
-        </article>
-      </section>
-    </section>
-    <section d-mode class="secciones once" id="seccionOnce">
-      <h2>Sorteo Digital</h2>
-      <form id="sorteo">
-        <label for="nuevo_participante">Ingresa un nuevo participante</label>
-        <input class="boton shortcuts botonParticipantes" type="text" id="nuevo_participante"
-          placeholder="Ingresa un nombre">
-        <input type="submit" value="Salvar" id="salvaParticipante" class="boton shortcuts botonParticipantesClick">
-        <input type="button" value="Obtener un ganador" id="getWiner" class="boton shortcuts botonParticipantesClick">
-      </form>
-      <div id="contenedor_participantes">
-        <h2>participantes:</h2>
-        <p id="participantes"></p>
-        <h2 id="ganadorTittle"></h2>
-        <p id="ganador"></p>
-      </div>
-    </section>
-    <section d-mode class="secciones doce" id="seccionDoce">
-      <h2>Responsive Slider</h2>
-      <section id="container-slider">
-        <div class="slider--btn -left " id="sliderBtnLeft">
-
-          <ion-icon class="btn --left --initial-btn" name="arrow-back-circle-outline">
-          </ion-icon>
-          <p class="inf_btn">Previous</p>
-        </div>
-
-        <article class="content-slider first">
-          <img src="https://placeimg.com/200/200/nature" alt="naturaleza">
-        </article>
-        <article class="content-slider off">
-          <p>Estaremos hablando un poco sobre la naturaleza..</p>
-        </article>
-        <article class="content-slider off">
-          <img src="https://placeimg.com/200/200/animals" alt="animals">
-        </article>
-        <article class="content-slider off">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur perferendis natus iusto blanditiis?
-            Dolorum dolor repudiandae quaerat, sapiente illo natus, asperiores in, distinctio numquam itaque iste
-            inventore quia consequuntur eum.</p>
-        </article>
-        <div class="slider--btn -rigth" id="sliderBtnRigth">
-          <ion-icon class="btn --rigth" name="arrow-forward-circle-outline">
-          </ion-icon>
-          <p class="inf_btn">Next</p>
-        </div>
-      </section>
-    </section>
-    <section d-mode class="secciones trece" id="seccionTrece">
-      <h2>Filtro de busqueda</h2>
-    </section>
-    <section d-mode class="secciones catorce" id="seccionCatorce">
-      <h2>Filtro de busqueda</h2>
-    </section>
-    <section d-mode class="secciones quince" id="seccionQuince">
-      <h2>Filtro de busqueda</h2>
+      </aside>
     </section>
   </main>
   <script src="css/styles.js"></script>

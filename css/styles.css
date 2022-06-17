@@ -883,8 +883,9 @@ h1 {
 
 #container-slider {
   background-color: #333;
+  position: relative;
   margin: auto;
-  width: 85vw;
+  width: 85%;
   height: 45vw;
   display: flex;
   align-items: center;
@@ -907,10 +908,12 @@ h1 {
   font-size: 40px;
 }
 #container-slider #sliderBtnLeft {
-  left: 8%;
+  left: 4%;
+  position: absolute;
 }
 #container-slider #sliderBtnRigth {
-  right: 8%;
+  right: 4%;
+  position: absolute;
 }
 #container-slider .inf_btn {
   font-size: 10px;
@@ -923,8 +926,9 @@ h1 {
 }
 
 .content-slider img {
-  width: 90%;
-  height: 90%;
+  width: inherit;
+  height: inherit;
+  object-fit: cover;
 }
 
 .textBtnsSliderIsActive {
@@ -974,7 +978,7 @@ h1 {
 
 .content-slider {
   transform: translate(207px, 0px);
-  transition: all 300ms ease-in-out;
+  transition: opacity 300ms ease-in-out;
   overflow: hidden;
   background-color: #222;
   display: flex;
@@ -1034,4 +1038,59 @@ h1 {
   .doce > h2 {
     margin-bottom: 45%;
   }
+}
+
+#rigth-bar {
+  opacity: 0;
+  visibility: hidden;
+  z-index: -1;
+  position: fixed !important;
+  transition: all 300ms linear;
+}
+
+.rigth-barActive {
+  opacity: 1 !important;
+  visibility: visible !important;
+  z-index: 0 !important;
+  display: flex;
+  right: 0;
+  bottom: 0;
+  text-transform: uppercase;
+  text-align: initial;
+  background-color: #222;
+  color: #f7df1e;
+  font-size: 14px !important;
+  border: 1px solid #f7df1e;
+  width: 20%;
+  height: 85vh;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+.rigth-barActive li {
+  display: block;
+  padding: 3px;
+  margin: 10px 0px 0px 10px;
+}
+
+.rigth-barActive li:last-child {
+  margin-bottom: 10px;
+}
+
+#hijos {
+  transition: width 300ms linear;
+}
+
+.padre-is-active #hijos {
+  width: 80%;
+}
+
+.padre-is-active {
+  display: flex;
+  flex-direction: row;
+}
+.-activeLi {
+  background-color: #f7df1e;
+  color: #222;
 }

@@ -15,6 +15,7 @@ import getGeolocation from "./geolocation.js";
 import getSearch from "./search_result.js";
 import sorteo from "./sorteo_automatico.js";
 import slider from "./slider.js";
+import observator from "./observer.js";
 
 const d = document,
   w = window,
@@ -39,6 +40,7 @@ const d = document,
 let storage = window.localStorage;
 
 d.addEventListener("DOMContentLoaded", (e) => {
+  observator("padre", "rigth-bar", ".secciones");
   responsive(
     "(min-width: 500px)",
     `youtubeMedia`,
