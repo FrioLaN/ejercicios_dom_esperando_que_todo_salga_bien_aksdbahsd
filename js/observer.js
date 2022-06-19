@@ -2,7 +2,7 @@ const d = document;
 
 export default function observator(father, aside, sections) {
   const objec = {
-    threshold: [0.5, 0.75],
+    threshold: [0.4, 0.75],
   };
 
   const $secciones = d.querySelectorAll("section[scroll-spy]");
@@ -10,7 +10,6 @@ export default function observator(father, aside, sections) {
     obs.forEach((item) => {
       const id = item.target.getAttribute("id");
       if (item.isIntersecting) {
-        console.log(id);
         d.querySelector(`a[scroll-spy][href="#${id}"]`).classList.add(
           "-activeLi"
         );

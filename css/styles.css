@@ -175,7 +175,7 @@ h1 {
 }
 
 .secciones {
-  width: 100vh;
+  width: 100%;
   color: #222;
   background-color: #f7df1e;
   border: 1px solid #222;
@@ -365,12 +365,13 @@ h1 {
 .contenedor_shortcut {
   border-bottom: 1px solid #f7df1e;
   height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 .contenedor_shortcut input[type="text"] {
-  display: block;
-  position: absolute;
-  margin-top: 5px;
-  left: 50%;
+  width: 15%;
   outline: none;
   border: 1px solid #f7df1e;
   cursor: text;
@@ -380,10 +381,8 @@ h1 {
   color: #f7df1e;
 }
 .contenedor_shortcut label {
+  text-align: left;
   cursor: not-allowed;
-  display: block;
-  position: absolute;
-  transform: translate(49px, 10px);
 }
 
 #shortcuts ._auxiliares {
@@ -530,18 +529,11 @@ h1 {
   font-size: 30px;
   margin-top: 100px;
 }
-
-.cuatro #media-container {
-  margin: auto;
-  border: 1px solid #f7df1e;
-}
-
-.cuatro #media-container .iframes {
-  margin: 50px;
-  display: block;
-  float: left;
-  width: 500px;
-  height: 300px;
+.cuatro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
 }
 .cuatro #youtubeMedia p a,
 .cuatro #gmapMedia p a {
@@ -560,8 +552,6 @@ h1 {
   max-width: 900px;
   max-height: 800px;
   border: 1px solid #f7df1e;
-  margin-top: 200px;
-  margin-left: 100px;
   float: left;
 }
 
@@ -1049,6 +1039,10 @@ h1 {
   }
 }
 
+/*/////////////////////////////////////
+//nav rigth
+/////////////////////////////////////*/
+
 @media screen and (min-width: 1020px) {
   .secciones {
     width: 100% !important;
@@ -1113,4 +1107,17 @@ h1 {
 
 #hijos {
   transition: width 300ms linear;
+}
+
+/*/////////////////////////////////////
+//smart video
+/////////////////////////////////////*/
+
+.smartVideos {
+  margin: auto;
+  margin-top: 200px;
+  margin-bottom: 200px;
+  display: block;
+  width: 70%;
+  height: 70%;
 }

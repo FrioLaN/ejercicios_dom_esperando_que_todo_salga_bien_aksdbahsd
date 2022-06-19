@@ -16,6 +16,7 @@ import getSearch from "./search_result.js";
 import sorteo from "./sorteo_automatico.js";
 import slider from "./slider.js";
 import observator from "./observer.js";
+import smartVideo from "./smart_video.js";
 
 const d = document,
   w = window,
@@ -40,18 +41,19 @@ const d = document,
 let storage = window.localStorage;
 
 d.addEventListener("DOMContentLoaded", (e) => {
+  smartVideo(true);
   observator("padre", "rigth-bar", ".secciones");
   responsive(
     "(min-width: 500px)",
     `youtubeMedia`,
     `<p><a target="blank" href="https://youtu.be/JA9HUcsdKkA">ver en youtube</a></p>`,
-    `<iframe width="560" height="315" src="https://www.youtube.com/embed/JA9HUcsdKkA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
+    `<iframe  src="https://www.youtube.com/embed/JA9HUcsdKkA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
   );
   responsive(
     "(min-width: 500px)",
     `gmapMedia`,
     `<p><a target="blank" href="https://goo.gl/maps/T8yhtUympPjDZPiw6">ver en map</a></p>`,
-    `<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1063795.3953452292!2d23.811213872264343!3d58.616964090433584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4692949c82a04bfd%3A0x40ea9fba4fb425c3!2sEstonia!5e0!3m2!1ses!2sec!4v1653429130608!5m2!1ses!2sec" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`
+    `<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1063795.3953452292!2d23.811213872264343!3d58.616964090433584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4692949c82a04bfd%3A0x40ea9fba4fb425c3!2sEstonia!5e0!3m2!1ses!2sec!4v1653429130608!5m2!1ses!2sec"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`
   );
   $salvar.disabled = true;
   $cancelar.disabled = true;
