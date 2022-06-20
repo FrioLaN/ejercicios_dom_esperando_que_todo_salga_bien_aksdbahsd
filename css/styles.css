@@ -462,7 +462,7 @@ h1 {
   opacity: 0;
   position: fixed;
   top: 80%;
-  left: 94%;
+  left: 12%;
   transform: translate(-94%, 80%);
   width: 45px;
   height: 45px;
@@ -1120,4 +1120,57 @@ h1 {
   display: block;
   width: 70%;
   height: 70%;
+}
+
+/*/////////////////////////////////////
+//validacion de formularios
+/////////////////////////////////////*/
+
+#formFromInfo {
+  background-color: #333;
+  display: flex;
+  width: 90%;
+  min-height: 100%;
+  margin: auto;
+  margin-top: 100px;
+  padding: 10px 0px;
+  align-items: center;
+  flex-direction: column;
+}
+
+#formFromInfo .inputFromInfo {
+  display: block;
+  margin: 10px 0px;
+  width: 80%;
+  height: 5vh;
+}
+
+#formFromInfo .inputFromInfo.--message {
+  height: 20vh;
+}
+#formFromInfo .inputFromInfo.--sent {
+  width: 10%;
+}
+
+#formFromInfo .inputFromInfo.--message {
+  width: 80%;
+  resize: none;
+}
+#formFromInfo .errorFormInfo {
+  background-color: red;
+  width: 80%;
+  padding: 4px;
+  color: white;
+}
+
+#formFromInfo .disabled-sent {
+  opacity: 0.5;
+  cursor: not-allowed;
+  border: none;
+}
+
+#formFromInfo .disabled-sent:hover {
+  background-color: #f7df1e;
+  color: #222;
+  border: none;
 }

@@ -34,7 +34,7 @@
           <li><a d-mode href="#seccionOnce">Sorteo Digital</a></li>
           <li><a d-mode href="#seccionDoce">Responsive Slider</a></li>
           <li><a d-mode href="#seccionTrece">video👍</a></li>
-          <li><a d-mode href="#seccionCatorce">Filtros de Busqueda</a></li>
+          <li><a d-mode href="#seccionCatorce">validacion de formularios</a></li>
           <li><a d-mode href="#seccionQuince">Filtros de Busqueda</a></li>
         </ul>
       </nav>
@@ -348,17 +348,30 @@
         <section d-mode scroll-spy class="secciones trece" id="seccionTrece">
           <h2>video👍</h2>
           <article>
-            <video class="smartVideos" src="assets/this_is_america.mp4" alt="dis is americaaA" controls>
+            <video class="smartVideos" src="assets/this_is_america.mp4" alt="dis is americaaA" controls loop muted>
             </video>
           </article>
 
           <article>
-            <video class="smartVideos" src="assets/tumorouComesTuDei.mp4" alt="dis is americaaA" controls></video>
+            <video class="smartVideos" src="assets/tumorouComesTuDei.mp4" alt="dis is americaaA" controls loop
+              muted></video>
           </article>
 
         </section>
         <section d-mode scroll-spy class="secciones catorce" id="seccionCatorce">
-          <h2>Filtro de busqueda</h2>
+          <h2>validacion de formularios</h2>
+          <form id="formFromInfo">
+            <input class="boton shortcuts botonParticipantes inputFromInfo --name" type="text" data-form-contact
+              placeholder="Ingresa tu nombre." required>
+            <input class="boton shortcuts botonParticipantes inputFromInfo --email" type="email" data-form-contact
+              placeholder="Ingresa tu correo." required>
+            <input class="boton shortcuts botonParticipantes inputFromInfo --issue" type="text" data-form-contact
+              placeholder="Ingresa el asunto." required>
+            <textarea class="boton shortcuts botonParticipantes inputFromInfo --message" data-form-contact
+              placeholder="Ingresa el mensaje." required></textarea>
+            <input class="boton shortcuts botonParticipantesClick inputFromInfo --sent" type="submit"
+              data-form-contact-sent value="Enviar">
+          </form>
         </section>
         <section d-mode scroll-spy class="secciones quince" id="seccionQuince">
           <h2>Filtro de busqueda</h2>
@@ -382,7 +395,7 @@
             <li><a href="#seccionOnce" id="once" scroll-spy>Sorteo Digital</a></li>
             <li><a href="#seccionDoce" id="doce" scroll-spy>Responsive Slider</a></li>
             <li><a href="#seccionTrece" id="trece" scroll-spy>video👍</a></li>
-            <li><a href="#seccionCatorce" id="catorce" scroll-spy>Filtros de Busqueda</a></li>
+            <li><a href="#seccionCatorce" id="catorce" scroll-spy>validacion de formularios</a></li>
             <li><a href="#seccionQuince" id="quince" scroll-spy>Filtros de Busqueda</a></li>
           </ul>
         </div>

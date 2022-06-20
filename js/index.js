@@ -17,6 +17,7 @@ import sorteo from "./sorteo_automatico.js";
 import slider from "./slider.js";
 import observator from "./observer.js";
 import smartVideo from "./smart_video.js";
+import validForm from "./valida_form.js";
 
 const d = document,
   w = window,
@@ -42,6 +43,7 @@ let storage = window.localStorage;
 
 d.addEventListener("DOMContentLoaded", (e) => {
   smartVideo(true);
+  validForm();
   observator("padre", "rigth-bar", ".secciones");
   responsive(
     "(min-width: 500px)",

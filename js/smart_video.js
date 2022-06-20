@@ -1,4 +1,5 @@
-const d = document;
+const d = document,
+  w = window;
 
 export default function smartVideo(inDocument = false) {
   const ob = {
@@ -9,10 +10,15 @@ export default function smartVideo(inDocument = false) {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.play();
-        entry.target.muted = true;
       } else {
         entry.target.pause();
-        entry.target.muted = true;
+      }
+      if (inDocument) {
+        w.addEventListener("visibilitychange", () =>
+          d.visibilityState === "visible"
+            ? entry.target.play()
+            : entry.target.pause()
+        );
       }
     });
   };
@@ -20,11 +26,4 @@ export default function smartVideo(inDocument = false) {
   $videos.forEach((item) => {
     OBSERVER.observe(item);
   });
-  if (inDocument) {
-    d.addEventListener("visibilitychange", () => {
-      $videos.forEach((media) => {
-        media.pause();
-      });
-    });
-  }
 }
