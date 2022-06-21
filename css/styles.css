@@ -1139,6 +1139,7 @@ h1 {
 }
 
 #formFromInfo .inputFromInfo {
+  border: 1px solid #f7df1e;
   display: block;
   margin: 10px 0px;
   width: 80%;
@@ -1173,4 +1174,16 @@ h1 {
   background-color: #f7df1e;
   color: #222;
   border: none;
+}
+
+#formFromInfo .sent-mail {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+#formFromInfo .info-confirm,
+#formFromInfo .info-confirm:hover {
+  background-color: lightgreen;
+  border: 1px solid white;
+  color: #222;
 }

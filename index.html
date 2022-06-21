@@ -362,13 +362,13 @@
           <h2>validacion de formularios</h2>
           <form id="formFromInfo">
             <input class="boton shortcuts botonParticipantes inputFromInfo --name" type="text" data-form-contact
-              placeholder="Ingresa tu nombre." required>
+              placeholder="Ingresa tu nombre." required name="name">
             <input class="boton shortcuts botonParticipantes inputFromInfo --email" type="email" data-form-contact
-              placeholder="Ingresa tu correo." required>
+              placeholder="Ingresa tu correo." required name="mail">
             <input class="boton shortcuts botonParticipantes inputFromInfo --issue" type="text" data-form-contact
-              placeholder="Ingresa el asunto." required>
+              placeholder="Ingresa el asunto." required name="issue">
             <textarea class="boton shortcuts botonParticipantes inputFromInfo --message" data-form-contact
-              placeholder="Ingresa el mensaje." required></textarea>
+              placeholder="Ingresa el mensaje." required name="message"></textarea>
             <input class="boton shortcuts botonParticipantesClick inputFromInfo --sent" type="submit"
               data-form-contact-sent value="Enviar">
           </form>
@@ -410,7 +410,11 @@
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
+  <script type="text/javascript">
+    emailjs.init('F_gTmOzUFUtqF0hI2')
+  </script>
 </body>
 
 </html>

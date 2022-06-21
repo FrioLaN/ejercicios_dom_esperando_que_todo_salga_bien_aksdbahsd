@@ -30,7 +30,7 @@ export default function validForm() {
           $capErrorName.remove();
         } catch (err) {}
         inputs.name = false;
-
+        $element.classList.remove("info-confirm");
         let $newErrorName = d.createElement("p");
         $newErrorName.textContent = "No puedes ingresar numeros";
         $newErrorName.classList.add("errorFormInfo");
@@ -41,6 +41,8 @@ export default function validForm() {
         $element.insertAdjacentElement("afterend", $newErrorName);
       } else if (WITHOUTNUMBER.test === false) {
         inputs.name = true;
+        $element.classList.add("info-confirm");
+
         try {
           $capErrorName.remove();
         } catch (err) {}
@@ -51,6 +53,7 @@ export default function validForm() {
           $capErrorName.remove();
         } catch (err) {}
         inputs.name = false;
+        $element.classList.remove("info-confirm");
         let $newErrorName = d.createElement("p");
         $newErrorName.textContent =
           "El nombre no puede medir menos de 3 letras o ser superior a 15 letras";
@@ -62,6 +65,7 @@ export default function validForm() {
         $element.insertAdjacentElement("afterend", $newErrorName);
       } else {
         inputs.name = true;
+        $element.classList.add("info-confirm");
         try {
           $capErrorName.remove();
         } catch (err) {}
@@ -75,6 +79,7 @@ export default function validForm() {
         /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
       if (!validaMail.test(valueElement)) {
         inputs.mail = false;
+        $element.classList.remove("info-confirm");
         try {
           $capErrorMail.remove();
         } catch (err) {}
@@ -89,6 +94,7 @@ export default function validForm() {
         $element.insertAdjacentElement("afterend", $newErrorMail);
       } else {
         inputs.mail = true;
+        $element.classList.add("info-confirm");
         try {
           $capErrorMail.remove();
         } catch (err) {}
@@ -99,11 +105,12 @@ export default function validForm() {
         "#formFromInfo p[data-errorInfo-issue]"
       );
       $capErrorIssue = d.querySelector("#formFromInfo p[data-errorInfo-name]");
-      if (valueElement.length > 30 || valueElement.length < 5) {
+      if (valueElement.length > 40 || valueElement.length < 5) {
         try {
           $capErrorIssue.remove();
         } catch (err) {}
         inputs.issue = false;
+        $element.classList.remove("info-confirm");
 
         let $newErrorIssue = d.createElement("p");
         $newErrorIssue.textContent =
@@ -116,6 +123,7 @@ export default function validForm() {
         $element.insertAdjacentElement("afterend", $newErrorIssue);
       } else {
         inputs.issue = true;
+        $element.classList.add("info-confirm");
 
         try {
           $capErrorIssue.remove();
@@ -130,6 +138,7 @@ export default function validForm() {
           $capErrorMessage.remove();
         } catch (err) {}
         inputs.message = false;
+        $element.classList.remove("info-confirm");
 
         let $newErrorMessage = d.createElement("p");
         $newErrorMessage.textContent =
@@ -142,6 +151,7 @@ export default function validForm() {
         $element.insertAdjacentElement("afterend", $newErrorMessage);
       } else {
         inputs.message = true;
+        $element.classList.add("info-confirm");
 
         try {
           $capErrorMessage.remove();
@@ -158,20 +168,53 @@ export default function validForm() {
     }
   }
   $inputs.forEach((e) => e.addEventListener("keyup", valid));
-
   $submit.addEventListener("click", (e) => {
-    console.log("se envio");
-    $form.reset();
+    e.preventDefault();
+
+    $submit.disabled = true;
+    $submit.classList.add("disabled-sent");
+    const serviceID = "default_service";
+    const templateID = "template_1riuods";
+
+    $submit.value = "enviando...";
+
+    $inputs.forEach((el) => {
+      el.classList.add("sent-mail");
+    });
+
+    emailjs.sendForm(serviceID, templateID, $form).then(
+      () => {
+        $inputs.forEach((el) => {
+          el.classList.remove("sent-mail");
+          $element.classList.remove("info-confirm");
+        });
+        Swal.fire({
+          icon: "success",
+          title: "Enviado",
+          text: "Se envio el mail correctamente!",
+        });
+        $form.reset();
+        $submit.value = "Enviar";
+      },
+      (err) => {
+        $inputs.forEach((el) => {
+          el.classList.remove("sent-mail");
+          $element.classList.remove("info-confirm");
+        });
+        Swal.fire({
+          icon: "error",
+          title: "No enviado",
+          text: "no se envio el mail!",
+        });
+        $form.reset();
+        $submit.value = "Enviar";
+      }
+    );
     inputs = {
       name: false,
       mail: false,
       issue: false,
       message: false,
     };
-    e.preventDefault();
-    $submit.disabled = true;
-    $submit.classList.add("disabled-sent");
   });
 }
-
-function nameError() {}
